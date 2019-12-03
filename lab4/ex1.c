@@ -46,6 +46,11 @@ main( )
 			op3 = pop();
 			if ((int)op2 == op2  && (int)op3 == op3 && op2 != 0 )
 				push((int)op3%(int)op2);
+			else
+			{
+			  printf("ERROR");
+			}
+			
 			break;
 	
 		case '\n':
@@ -103,14 +108,14 @@ int getop(char s[])
  
 	s[1] = '\0';
  
-	if (!isdigit(c) && c != '.')
+	if (!isdigit(c) && c != '.' && c!='-')
 		return c;    
  
 	i = 0;
 	if (isdigit(c))
 		while (isdigit(s[++i] = c = getch()))  
 			;
-	if (c == '.')
+	if (c == '.'||c=='-')
 		while (isdigit(s[++i] = c = getch())) 
 			;
  
