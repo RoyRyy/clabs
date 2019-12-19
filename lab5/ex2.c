@@ -6,12 +6,12 @@ void ungetch(int);
 
 main()
 {
-    float a[10],*p,j,m=0;
+    float a[100],*p,j,m=0;
     int i,o;
     p=a;
     printf("请输入你要求和的浮点数个数：");
     scanf("%d",&o);
-    printf("请输入这些浮点数，以回车键结束：\n");
+    printf("请输入这%d个浮点数，以回车键结束：\n",o);
     for (i=0;i<o;i++){
      getfloat(&p[i]);}
     for (i=0;i<o;i++)
