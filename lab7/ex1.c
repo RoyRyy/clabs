@@ -2,24 +2,20 @@
 #include<stdlib.h>
 int main(int argc,char *argv[])
 {
-    float  a[5];
-    int k=0;
-    for(k=0;k<5;k++)
+   double  a[200];
+    int k=0,j=0;
+    for(k=1;k<argc;k++,j++)
     {
-        a[k]=atof(argv[k+1]);
+        a[j]=atof(argv[k]);
         }
-    int i,t,j;
-    for(i=0;i<=4;i++)
+    int i;
+    double min=a[1];
+    for(i=0;i<argc-1;i++)
     {
-        for(j=i+1;j<5;j++)
-        {
-            if (a[i]>a[j])
-            {
-                t=a[i];
-                a[i]=a[j];
-                a[j]=t;
-            }
+        if(a[i]<min){
+            min=a[i];
         }
-    }   
+    }
+    
    printf("the minimum number is:");   
-   printf(" %1.1f\n",a[0]);}
+   printf(" %1.1f\n",min);}
