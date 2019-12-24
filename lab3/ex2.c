@@ -1,10 +1,10 @@
 #include<stdio.h>
 int main()
 {
-    int a[10],t,i=0;
+    int a[15],t,i=0,m,u=0;
     for(t=0;t<10;t++){
      a[t]=0;}
-    unsigned int ryy=0,j=0,k=1;
+    unsigned int ryy=0,j=0,k=1,e=0;
     printf("请输入一个十六进制的整数：");
     char b;
     while(k!=0){
@@ -13,15 +13,25 @@ int main()
     {
         a[i]=b;
         i++;
+        if(i>=10){
+         printf("out of the maximun number");
+        return 0;}
+    }
+    e=k-1;
+    while(e>0){
+   e=e /16;
+   m=e%16;
+   if(m!=0){
+    u++;}
     }
 if (a[0]!='0' ||(a[1]!='x' && a[1]!='X')){
     printf("illegal input");
     return 0;
                                          }
-if (a[6]!=0){
-    printf("out of the maximun number:%u",k-1);
+ if (a[u+3]!=0){
+   printf("out of the maximun number:%u",k-1);
     return 0;
-            }
+           }
 for (j=2;j<i;j++)
 {
     if (a[j]>='0' && a[j]<='9') 
