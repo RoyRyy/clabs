@@ -1,37 +1,40 @@
 #include<stdio.h>
-
 int main()
 {
-    int nums[10]={0};
-    unsigned int num=0,i=0,j=0;
-    printf("请输入一个十六进制的非负整数：");
-    char temp;
-    while((temp=getchar())!='\n')
+    int a[10],t,i=0;
+    for(t=0;t<10;t++){
+     a[t]=0;}
+    unsigned int ryy=0,j=0,k=1;
+    printf("请输入一个十六进制的整数：");
+    char b;
+    while(k!=0){
+    k=k<<1;}
+    while((b=getchar())!='\n')
     {
-        nums[i]=temp;
+        a[i]=b;
         i++;
     }
-
-
-if (nums[6]!=0){
-    printf("out of the maximun number:%u",-1);
-    return 0;
-}
-if (nums[0]!=48 ||(nums[1]!=88 && nums[1]!=120)){
+if (a[0]!='0' ||(a[1]!='x' && a[1]!='X')){
     printf("illegal input");
-}
+    return 0;
+                                         }
+if (a[6]!=0){
+    printf("out of the maximun number:%u",k-1);
+    return 0;
+            }
 for (j=2;j<i;j++)
 {
-    if (nums[j]>=48 && nums[j]<=57) 
-    num=num*16+nums[j]-48;
-    else if(nums[i]>=65 && nums[j]<=76)
-    num=num*16+nums[j]-55;
-    else if (nums[j]>=97 && nums[j]<=162)
-    num=num*16+nums[j]-87;
+    if (a[j]>='0' && a[j]<='9') 
+    ryy=ryy*16+a[j]-'0';
+    else if(a[j]>='A' && a[j]<='F')
+    ryy=ryy*16+a[j]-'7';
+    else if (a[j]>='a' && a[j]<='f')
+    ryy=ryy*16+a[j]-'W';
     else{
         printf("illegal input");
         return 0;
     }
 }
-printf("the result is:%d\n",num);
+printf("the result is:%d\n",ryy);
+
 }
